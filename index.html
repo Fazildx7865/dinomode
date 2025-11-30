@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Test Website — Abhishek Preview</title>
+  <style>
+    :root{--accent:#0ea5a4;--bg:#f8fafc;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;margin:0;background:var(--bg);color:#0f172a}
+    header{background:linear-gradient(90deg,rgba(14,165,164,.06),transparent);padding:20px 16px}
+    .container{max-width:980px;margin:0 auto;padding:0 16px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:40px;height:40px;border-radius:10px;background:var(--accent);display:inline-grid;place-items:center;color:white;font-weight:700}
+    nav ul{display:flex;gap:12px;list-style:none;padding:0;margin:0}
+    nav a{text-decoration:none;color:inherit;padding:8px;border-radius:8px}
+    .btn{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;text-decoration:none}
+
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:48px 0}
+    .hero h1{font-size:clamp(1.6rem,3vw,2.4rem);margin:0 0 8px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,.06)}
+
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:24px 0}
+    .feature h3{margin:0 0 6px}
+    footer{padding:32px 0;color:var(--muted);font-size:0.95rem}
+
+    /* small responsive tweaks */
+    @media(min-width:880px){.hero{grid-template-columns:1fr 380px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">AP</div>
+        <div>
+          <div style="font-weight:700">Abhishek Preview</div>
+          <div style="font-size:0.85rem;color:var(--muted)">Test/demo website</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn" href="#">Sign in</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Simple test website — ready to inspect</h1>
+        <p style="color:var(--muted);margin:0 0 16px">This minimal site includes layout, cards, responsive grid, and a small contact form. Use it for testing subdomain hosting, content checks, or demos.</p>
+        <div class="card">
+          <strong>Quick actions:</strong>
+          <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+            <li>Open DevTools &gt; Network to check requests</li>
+            <li>Inspect cookies / localStorage</li>
+            <li>Modify text and redeploy for tests</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Contact</h3>
+          <form id="contactForm">
+            <div style="margin-bottom:8px">
+              <label for="name" style="display:block;font-size:0.9rem;margin-bottom:4px">Name</label>
+              <input id="name" name="name" required placeholder="Your name" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6edf0">
+            </div>
+            <div style="margin-bottom:8px">
+              <label for="email" style="display:block;font-size:0.9rem;margin-bottom:4px">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6edf0">
+            </div>
+            <div style="text-align:right">
+              <button type="submit" class="btn">Send</button>
+            </div>
+            <p id="msg" style="font-size:0.9rem;margin:8px 0 0;color:var(--muted)"></p>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <section id="features">
+      <h2 style="margin-bottom:8px">Features</h2>
+      <div class="features">
+        <div class="card feature">
+          <h3>Responsive</h3>
+          <p style="color:var(--muted);margin:0">Layout adapts from mobile to desktop using CSS grid and clamp().</p>
+        </div>
+        <div class="card feature">
+          <h3>Accessible</h3>
+          <p style="color:var(--muted);margin:0">Simple HTML, semantic structure, meaningful labels and focusable controls.</p>
+        </div>
+        <div class="card feature">
+          <h3>Lightweight</h3>
+          <p style="color:var(--muted);margin:0">No dependencies — pure HTML/CSS/vanilla JS for fastest load.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:8px">
+      <div class="card">
+        <h3 style="margin-top:0">Form data (local preview)</h3>
+        <p style="color:var(--muted);margin:0">Fill the form to see local preview — data does not leave your browser.</p>
+        <pre id="preview" style="background:#f1f5f9;border-radius:8px;padding:12px;margin-top:8px;white-space:pre-wrap;color:#0f172a">No submissions yet.</pre>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <div style="border-top:1px solid #eef2f6;padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>© Abhishek Preview — Test site</div>
+      <div style="color:var(--muted)">Built for quick checks & demos</div>
+    </div>
+  </footer>
+
+  <script>
+    // small client-side behavior for the demo
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('msg');
+    const preview = document.getElementById('preview');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        ts: new Date().toISOString()
+      };
+      // show preview; do NOT send anywhere
+      preview.textContent = JSON.stringify(data, null, 2);
+      msg.textContent = 'Form captured locally — check preview below.';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
